@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src = "js/category.js"></script>
+  	<script type="text/javascript" src = "js/constants.js"></script>
+    <link rel = "stylesheet" href = css/category.css>
+</head>
+<body background="">
+      <ul>
+        <li><a class="" href="login.html">Home</a></li>
+        <li><a class = "active" href="addNews.html">Add News</a></li>
+        <!-- <li><a href="#contact">Contact</a></li> -->
+        <!-- <li><a href="#about">About</a></li> -->
+      </ul>
+		<form action = "newsDisplay.html" method="get">
+
+              <div class="container-fluid">
+                  <div class="col-sm-4">
+                    <div class = "btn-group-vertical">
+                   
+                            <div class="btn-group">
+	                            <button type="submit" name = "button" class="btn btn-primary btn-md" value = "AllNews" onclick = "redirect_to_newsDisplay()" id = "all_news">
+	                         	All News</button>
+                            </div>
+
+                            <div class = "btn-group">   
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "Science"  onclick = "redirect_to_newsDisplay()" id = "science">Science</button>
+                            </div>
+
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "Health"  onclick = "redirect_to_newsDisplay()" id = "health">Health</button>
+                            </div>
+
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "Technology"  onclick = "redirect_to_newsDisplay()" id = "technology">Technology</button>
+                            </div>
+                            
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "Environment"  onclick = "redirect_to_newsDisplay()" id = "environment">Environment </button>
+                            </div>
+                            
+
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "Society"  onclick = "redirect_to_newsDisplay()" id = "society">Society </button>
+                            </div>
+                            
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "StrangeAndOffbeat"  onclick = "redirect_to_newsDisplay()" id = "strange_offbeat"> Strange and Offbeat</button>
+                            </div>
+                            
+                            <div class = "btn-group">
+                            	<button type="submit" name = "button" class="btn btn-primary btn-md" value = "MostPopular"  onclick = "redirect_to_newsDisplay()" id = "most_popular"> Most Popular</button>
+                            </div>
+
+
+                        </div>
+
+                 	</div>
+               <!--    <div class = "btn-group">
+                          <button type = "button" name = "button" class = "btn btn-primary btn-lg" value = "Add News" onclick = "redirect_to_addNews()">Add News</button>
+                        </div>
+                -->
+              </div>
+
+        </form>
+        </body>
+        </html>
