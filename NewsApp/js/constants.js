@@ -1,5 +1,6 @@
 var categoryList = {
     AllNews: "https://rss.sciencedaily.com/all.xml",
+    TopNews: "https://rss.sciencedaily.com/top.xml",
     Science: "https://rss.sciencedaily.com/top/science.xml",
     Health: "https://rss.sciencedaily.com/top/health.xml",
     Technology: "https://rss.sciencedaily.com/top/technology.xml",
