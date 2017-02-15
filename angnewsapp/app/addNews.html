@@ -1,0 +1,33 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta http-equiv=”Content-Type” content=”text/html;charset=ISO-8859-1”>
+        <title>Add News</title>
+        <!-- <link href=”style.css” rel=”stylesheet” type=”text/css” /> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type=”text/javascript” src=”http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js”></script>
+        <!--<script type="text/javascript" src = js/addNews.js></script>-->
+    </head>
+    <body>
+        <form align = "center" id = "addNewsForm" method = "post" action = "">
+            <div class = "form-group">
+                <label>Headline</label>
+                <input type="text" name="headline" id = "headline">
+            </div>
+            <div class = "form-group">
+                <label>Description</label>
+                <input type = "text" name = "description" id = "description">
+            </div>
+            <div class = "form-group">
+                <label>Date</label>
+                <input type = "date" name="date" id = "date">
+            </div>
+            <div class = "form-group">
+                <label>Reporter</label>
+                <input type="text" name = "reporter" id = "reporter">
+            </div>
+            <button type = "submit" id = "save" value = "Save" onclick = "save()">Save</button>
+            <button type = "button" id = "show" value = "Show" onclick = "show()">Show</button>
+        </form>
+    </body>
+</html>
