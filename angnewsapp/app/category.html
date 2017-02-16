@@ -8,7 +8,6 @@
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src = "js/categoryController.js"></script>
-
     </head>
     <body ng-app="news_app">
 
@@ -17,17 +16,16 @@
             <button class = "btn btn-primary btn-lg" ng-click="addNews()">Add News</button>
         </div>
         <div ng-controller="categoryCtrl as c">
-
-                <div class="container-fluid">
-                    <div class="col-sm-4">
-                        <div class = "btn-group-vertical">
-                            <div id='display' class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-success btn-lg" name = "button" ng-repeat="k in c.getKeys()" ng-click = "newsDisplay()">{{k}}</button>
-                            </div>
-
+            <div class="container-fluid">
+                <div class="col-sm-4">
+                    <div class = "btn-group-vertical">
+                        <div id='display' class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-success btn-lg" name = "button" ng-repeat="k in c.getKeys()" ng-click = "newsDisplay()">{{k}}</button>
                         </div>
+
                     </div>
                 </div>
+            </div>
         </div>
     </body>
 </html>

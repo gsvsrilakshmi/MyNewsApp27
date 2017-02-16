@@ -28,7 +28,7 @@ var category= {
     Society: "https://rss.sciencedaily.com/top/society.xml",
     StrangeOffbeat: "https://rss.sciencedaily.com/strange_offbeat.xml",
     MostPopular: "https://rss.sciencedaily.com/most_popular.xml"
-}
+};
 
 app.controller('loginCtrl', function($scope, $location) {
     $scope.submit = function () {
@@ -59,7 +59,6 @@ app.controller('categoryCtrl', function($scope, $location) {
     };
 
     $scope.newsDisplay = function() {
-        console.log("inside news display")
         $location.path('/newsdisplay');
     };
 
@@ -77,8 +76,9 @@ app.controller('categoryCtrl', function($scope, $location) {
 //
 //     this.category = category;
 //     $scope.displayData = function() {
-//         var button = getUrlButtonValue()['button'];
-//         loadXMLDoc(button);
+//         console.log("in displayData");
+//         var button = $scope.getUrlButtonValue()['button'];
+//         $scope.loadXMLDoc(button);
 //     };
 //
 //     $scope.getUrlButtonValue = function() {
@@ -96,7 +96,7 @@ app.controller('categoryCtrl', function($scope, $location) {
 //         var xmlhttp = new XMLHttpRequest();
 //         xmlhttp.onreadystatechange = function() {
 //             if (this.readyState == 4 && this.status == 200)  {
-//                 myFunction(this);
+//                 $scope.myFunction(this);
 //             }
 //         };
 //
@@ -162,4 +162,7 @@ app.controller('categoryCtrl', function($scope, $location) {
 //         $(".col-sm-8").append(table);
 //
 //     };
+//     angular.element(document).ready(function () {
+//        $scope.displayData();
+//     });
 // });

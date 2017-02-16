@@ -1,16 +1,42 @@
 <html>
     <head>
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src = "js/jquery-1.2.6.js"></script>
+        <script src = "js/jquery.xml2json.js"></script>
+        <script src = "js/jquery.xml2json.pack.js"></script>
+        <script src="js/testing.js"></script>
         <script type="text/javascript" src = "js/constants.js"></script>
-        <!--<script src = "js/newsDisplay.js"></script>-->
-        <script type="text/javascript" src = "js/categoryController.js"></script>
+        <!--<script type="text/javascript" src = "js/categoryController.js"></script>-->
+        <!--<script type="text/javascript" src = "newsDisplayController.js"></script>-->
+
     </head>
-    <body ng-app = "news_app" ng-init = "displayData()">
+    <body ng-app = "news_app">
         <div ng-controller="newsdisplayCtrl">
-            welcome
-            <div class="col-sm-8"></div>
+            <h3>{{msg}}</h3>
         </div>
+
+    <script>
+        var app = angular.module('news_app',[]);
+        app.controller('newsdisplayCtrl', function($scope, $http) {
+            $http.get(" https://rss.sciencedaily.com/all.xml")
+                .then(function(response) {
+                    var xml = response.data;
+                    var json = $.xml2json(xml);
+                    $scope.message = json;
+
+                    $scope.msg = '';
+                    for (var i =0;i < $scope.message.channel.item.length;i++) {
+                        $scope.msg += $scope.message.channel.item[i].title + "--";
+                        $scope.msg += $scope.message.channel.item[i].pubDate + "---";
+                        $scope.msg += $scope.message.channel.item[i].description + "----";
+                    }
+                    // console.log($scope.message);
+
+                });
+        });
+
+    </script>
     </body>
 </html>
 
