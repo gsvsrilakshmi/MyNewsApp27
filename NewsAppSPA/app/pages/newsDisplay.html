@@ -1,0 +1,15 @@
+<div ng-controller="newsdisplayCtrl">
+    <!--<p>{{msg}}</p>-->
+    <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Home</button>
+    <div ng-repeat="news in newsText.channel.item">
+        <div class = "row">
+            <div ng-if = "news.thumbnail">
+                <div><img src = "{{news.thumbnail.url}}" width = "30%" height = "30%"/></div>
+            </div>
+            <div class = "newsTitle">{{news.title}}</div>
+            <!--var date1 = new Date(news.pubDate);-->
+            <div>{{news.pubDate | date: 'medium' : +1030}}</div>
+            <div>{{news.description}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<!--<script src = "css/addNews.css"></script>-->
+<!--<body>-->
+<button class = "btn btn-primary btn-lg" ng-click ="category()">Back</button>
+<div class="container" data-ng-controller="addNewsController">
+    <h1 class="app-title">{{ appTitle }}</h1>
+
+        <section class="app-body">
+            <section class="archive-control">
+                <p><a href="" data-ng-click="archive()">Remove any News Item</a></p>
+            </section>
+            <form data-ng-submit="addNews()" class="todo-form">
+                <ul class="unstyled">
+                    <li data-ng-repeat="news in newsItem track by $index">
+                        <input type="checkbox" data-ng-model="news.done">
+                        <span class="done-{{ news.done }}">{{ news.text }}</span>
+                    </li>
+                </ul>
+
+                <label>Headline</label>
+                <input type="text" name = "headline" required>
+
+                <label>Date</label>
+                <input type = "date" name = "date">
+
+                <label>Description</label>
+                <input type="text" name = "description">
+
+                <label>Reporter</label>
+                <input type="text" name = "reporter">
+
+
+                    <input type="text" data-ng-model="newsText" placeholder="Enter new News item" />
+                    <br />
+                    <input type="submit" value="Add News" />
+            </form>
+        </section>
+
+</div>
+<!--</body>-->

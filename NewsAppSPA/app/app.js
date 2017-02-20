@@ -1,0 +1,141 @@
+'use strict';
+
+// Declare app level module which depends on views, and components
+var app = angular.module('news_app', [
+  'ngRoute'
+]);
+
+var category= {
+    AllNews: "https://rss.sciencedaily.com/all.xml",
+    TopNews: "https://rss.sciencedaily.com/top.xml",
+    Science: "https://rss.sciencedaily.com/top/science.xml",
+    Health: "https://rss.sciencedaily.com/top/health.xml",
+    Technology: "https://rss.sciencedaily.com/top/technology.xml",
+    Environment: "https://rss.sciencedaily.com/top/environment.xml",
+    Society: "https://rss.sciencedaily.com/top/society.xml",
+    StrangeOffbeat: "https://rss.sciencedaily.com/strange_offbeat.xml",
+    MostPopular: "https://rss.sciencedaily.com/most_popular.xml"
+};
+
+app.config(function($routeProvider, $locationProvider) {
+  // $locationProvider.hashPrefix('!');
+    //$locationProvider.html5Mode(true);
+
+  $routeProvider
+      .when('/', {
+          templateUrl : 'pages/login.html',
+          controller : 'loginCtrl'
+      })
+      .when('/category', {
+          templateUrl : 'pages/category.html',
+          controller : 'categoryCtrl'
+      })
+      .when('/newsdisplay/:param', {
+          templateUrl : 'pages/newsDisplay.html',
+          controller : 'categoryCtrl'
+      })
+      .when('/addnews', {
+          templateUrl : 'pages/addNews.html',
+          controller : 'addNewsController'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+});
+
+app.controller('loginCtrl', function($scope, $location,$route) {
+
+    $scope.submitForm = function() {
+
+        // check to make sure the form is completely valid
+        if ($scope.userForm.$valid) {
+            $location.path('/category');
+        }
+        else {
+            $route.reload();
+        }
+
+    };
+
+});
+
+app.controller('categoryCtrl', function($scope, $location) {
+
+    //console.log("inside category")
+    var categoryItem;
+    this.categoryList = category;
+
+    //console.log(this.categoryList)
+    this.getKeys=function () {
+        var keys=[];
+        for (categoryItem in this.categoryList){
+            keys.push(categoryItem);
+        }
+        return keys;
+
+    };
+
+    $scope.newsDisplay = function(categoryItem) {
+        //$scope.key = k;
+        $location.path('/newsdisplay/'+ categoryItem);
+    };
+
+    $scope.goToLogin = function () {
+        $location.path('/');
+    };
+
+    $scope.addNews = function() {
+        $location.path('/addnews');
+    };
+    //   console.log("getkeys "+this.getKeys())
+});
+
+app.controller('newsdisplayCtrl', function($scope, $http, $location) {
+    $http.get(" https://rss.sciencedaily.com/all.xml")
+        .then(function(response) {
+            var xml = response.data;
+            var jsonText = $.xml2json(xml);
+            $scope.newsText = jsonText;
+
+        });
+
+    $scope.goToLogin = function () {
+        $location.path('/');
+    };
+});
+
+app.controller('addNewsController',
+    function($scope, $location) {
+        $scope.appTitle = "Add News";
+        $scope.saved = localStorage.getItem('newsItem');
+        $scope.newsItem = (localStorage.getItem('newsItem')!==null) ? JSON.parse($scope.saved) : [ {text: 'Science', done: false}, {text: 'Technology', done: false} ];
+        localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
+
+        $scope.addNews = function() {
+            $scope.newsItem.push({
+                headline: $scope.headline,
+                date: $scope.date,
+                description:$scope.description,
+                reporter: $scope.reporter,
+                text: $scope.newsText,
+                done: false
+            });
+            $scope.newsText = ''; //clear the input after adding
+            localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
+        };
+
+        $scope.archive = function() {
+            var oldNews = $scope.newsItem;
+            $scope.newsItem = [];
+            angular.forEach(oldNews, function(news){
+                if (!news.done)
+                    $scope.newsItem.push(news);
+            });
+            localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
+        };
+
+        $scope.category = function() {
+            $location.path('/category');
+        }
+    }
+);
