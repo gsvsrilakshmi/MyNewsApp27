@@ -2,7 +2,7 @@
 
 // Declare app level module which depends on views, and components
 var app = angular.module('news_app', [
-  'ngRoute'
+  'ngRoute', 'ngCordova'
 ]);
 
 var category= {
@@ -17,40 +17,19 @@ var category= {
     MostPopular: "https://rss.sciencedaily.com/most_popular.xml"
 };
 
-app.run(function($window, $rootScope) {
-    $rootScope.online = navigator.onLine;
-    $window.addEventListener("offline", function () {
-        $rootScope.$apply(function() {
-            $rootScope.online = false;
-        });
-    }, false);
-    $window.addEventListener("online", function () {
-        $rootScope.$apply(function() {
-            $rootScope.online = true;
-        });
-    }, false);
-});
-
-//     app.factory('ping', ['$http', function($http) {
-//
-//         // Pings a URL or IP using HTTP GET request
-//         return {
-//             ping: function(URL, callback) {
-//
-//                 var responseTime = 0;
-//                 var start = (new Date()).getTime();
-//
-//                 $http.get(URL + '?rnd=' + (new Date().getTime()))
-//                     .success(function() {
-//                         responseTime = (new Date().getTime()) - start;
-//                         callback(Math.round(responseTime / 10) / 100);
-//                     })
-//                     .error(function() {
-//                         callback(responseTime);
-//                     })
-//             }
-//         }
-//     }]);
+//app.run(function($window, $rootScope) {
+//    $rootScope.online = navigator.onLine;
+//    $window.addEventListener("offline", function () {
+//        $rootScope.$apply(function() {
+//            $rootScope.online = false;
+//        });
+//    }, false);
+//    $window.addEventListener("online", function () {
+//        $rootScope.$apply(function() {
+//            $rootScope.online = true;
+//        });
+//    }, false);
+//});
 
 app.config(function($routeProvider) {
     ($routeProvider)
@@ -83,21 +62,14 @@ app.controller('loginCtrl', function($scope, $location,$route) {
         if ($scope.userForm.$valid) {
             $location.path('/category');
         }
-        else {
-            $route.reload();
-        }
-
     };
 
 });
 
 app.controller('categoryCtrl', function($scope, $location) {
-
-    //console.log("inside category")
     var categoryItem;
     this.categoryList = category;
 
-    //console.log(this.categoryList)
     this.getKeys=function () {
         var keys=[];
         for (categoryItem in this.categoryList){
@@ -143,15 +115,33 @@ app.controller('newsdisplayCtrl', function($scope, $http, $location, $routeParam
     }
 });
 
+//app.directive('camera', function() {
+//    return {
+//        restrict: 'A',
+//        require: 'ngModel',
+//        link: function(scope, elm, attrs, ctrl) {
+//            elm.on('click', function() {
+//                navigator.camera.getPicture(function (imageURI) {
+//                    scope.$apply(function() {
+//                        ctrl.$setViewValue(imageURI);
+//                    });
+//                }, function (err) {
+//                    ctrl.$setValidity('error', false);
+//                }, { quality: 50, destinationType: Camera.DestinationType.FILE_URI }
+//            });
+//        }
+//    };
+//});
+
 app.controller('addNewsController',
-    function($scope, $location) {
-        $scope.appTitle = "Add News";
+    function($scope, $location, $cordovaCamera) {
         $scope.saved = localStorage.getItem('newsItem');
         $scope.newsItem = (localStorage.getItem('newsItem')!==null) ? JSON.parse($scope.saved) : [ {text: 'Science', done: false}, {text: 'Technology', done: false} ];
         localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
 
         $scope.addNews = function() {
             $scope.newsItem.push({
+
                 headline: $scope.headline,
                 date: $scope.date,
                 description:$scope.description,
@@ -180,6 +170,47 @@ app.controller('addNewsController',
 
         $scope.category = function() {
             $location.path('/category');
+        };
+
+        $scope.takePhoto = function () {
+            var options = {
+                quality: 75,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
+
+            $cordovaCamera.getPicture(options).then(function (imageData) {
+                $scope.imgURI = "data:image/jpeg;base64," + imageData;
+            }, function (err) {
+                // An error occured.
+            });
+        };
+
+        $scope.choosePhoto = function () {
+            var options = {
+                quality: 75,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
+
+            $cordovaCamera.getPicture(options).then(function (imageData) {
+                $scope.imgURI = "data:image/jpeg;base64," + imageData;
+            }, function (err) {
+                // An error occured. Show a message to the user
+            });
         }
+
     }
 );

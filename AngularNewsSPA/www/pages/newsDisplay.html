@@ -1,10 +1,8 @@
 
 <div ng-controller="newsdisplayCtrl">
-    <span style = "color: green" ng-if = "online">You are on line!!</span>
-    <span style="color: red" ng-if = "!online">You are offline!</span>
-    <hr>
-    <!--<p>{{msg}}</p>-->
-    <!--<li ng-show="online == 'online'"><i class="icon-lock dark"></i><asp:LoginStatus ID="LoginStatus2" runat="server" LogoutText="Signout" LogoutPageUrl="~/Login.aspx" LoginText="Signout" LogoutAction="Redirect" /></li>-->
+    <!--<span style = "color: green" ng-if = "online">You are online!</span>-->
+    <!--<span style="color: red" ng-if = "!online">You are offline!</span>-->
+    <!--<hr>-->
     <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Home</button>
     <button class = "btn btn-primary btn-lg" ng-click ="goTocategory()">Back</button>
     <div ng-repeat="news in newsText.channel.item">
