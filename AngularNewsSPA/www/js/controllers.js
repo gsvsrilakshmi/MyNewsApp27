@@ -138,7 +138,7 @@ app.controller('captureCtrl', function($scope, $cordovaCapture) {
 });
 
 app.controller('addNewsController',
-    function($scope, $location, $cordovaCamera) {
+    function($scope, $location, $cordovaCamera, $http) {
         localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
 
         $scope.addNews = function() {
@@ -213,6 +213,23 @@ app.controller('addNewsController',
 //            localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
 //        };
 
+        $scope.geolocation = function() {
+            if(navigator.geolocation)
+                navigator.geolocation.getCurrentPosition(onPositionUpdate);
+        };
+
+        function onPositionUpdate(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&sensor=true";
+
+            $http.get(url).then(function(result) {
+                var address =result.data.results[2].formatted_address;
+                $scope.address = address;
+                alert($scope.address);
+            });
+        }
+
         $scope.category = function() {
             $location.path('/category');
         };
@@ -226,4 +243,12 @@ app.controller('addNewsController',
 
 app.controller('showNewsCtrl', function($scope, $location){
      $scope.news_article = JSON.parse(localStorage.getItem('newsItem'));
+
+     $scope.goAddNews = function() {
+        $location.path('/addnews');
+     }
+
+     $scope.logout = function() {
+        $location.path('/')
+     }
 });

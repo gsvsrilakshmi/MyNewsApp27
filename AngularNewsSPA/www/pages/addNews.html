@@ -16,7 +16,7 @@
             <input type="text" data-ng-model = "headline" required>
 
             <label>Date</label>
-            <input type = "date"data-ng-model = "date">
+            <input type = "date" data-ng-model = "date">
 
             <label>Description</label>
             <input type="text" data-ng-model="newsText" placeholder="Enter Description" />
@@ -34,7 +34,11 @@
                 Choose Photo
             </button>
 
-            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center"/>
+
+            <button class="btn btn-primary btn-lg" ng-click="geolocation()">
+                Get Location
+            </button>
         </form>
     </section>
     <!--<div ng-controller="cameraCtrl">-->

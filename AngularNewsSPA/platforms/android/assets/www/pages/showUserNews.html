@@ -1,7 +1,6 @@
 <div ng-controller = "showNewsCtrl">
-    <button class = "btn btn-primary btn-lg" ng-click ="addNews()">Back</button>
-    <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Logout</button>
-    <hr>
+    <button class = "btn btn-primary btn-lg" ng-click ="goAddNews()">Back</button>
+    <button class = "btn btn-primary btn-lg" ng-click ="logout()">Logout</button>
     <h2>News Article:</h2>
     <div ng-repeat = "iNews in news_article track by $index">
         <div class="container-fluid">
@@ -9,6 +8,7 @@
             <div>{{iNews.date}}</div>
             <div>{{iNews.description}}</div>
             <div>{{iNews.reporter}}</div>
+            <div><img ng-show = "iNews.image" ng-src = "{{iNews.image}}"/></div>
         </div>
     </div>
 </div>

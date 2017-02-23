@@ -59,47 +59,47 @@ app.controller('newsdisplayCtrl', function($scope, $http, $location, $routeParam
     }
 });
 
-app.controller('cameraCtrl', function($scope, $cordovaCamera) {
-    $scope.takePhoto = function () {
-        var options = {
-            quality: 75,
-            destinationType: Camera.DestinationType.DATA_URL,
-            sourceType: Camera.PictureSourceType.CAMERA,
-            allowEdit: true,
-            encodingType: Camera.EncodingType.JPEG,
-            targetWidth: 300,
-            targetHeight: 300,
-            popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
-        };
-
-        $cordovaCamera.getPicture(options).then(function (imageData) {
-            $scope.imgURI = "data:image/jpeg;base64," + imageData;
-        }, function (err) {
-            // An error occured.
-        });
-    };
-
-    $scope.choosePhoto = function () {
-        var options = {
-            quality: 75,
-            destinationType: Camera.DestinationType.DATA_URL,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-            allowEdit: true,
-            encodingType: Camera.EncodingType.JPEG,
-            targetWidth: 300,
-            targetHeight: 300,
-            popoverOptions: CameraPopoverOptions,
-            saveToPhotoAlbum: false
-        };
-
-        $cordovaCamera.getPicture(options).then(function (imageData) {
-            $scope.imgURI = "data:image/jpeg;base64," + imageData;
-        }, function (err) {
-            // An error occured. Show a message to the user
-        });
-    }
-});
+//app.controller('cameraCtrl', function($scope, $cordovaCamera) {
+//    $scope.takePhoto = function () {
+//        var options = {
+//            quality: 75,
+//            destinationType: Camera.DestinationType.DATA_URL,
+//            sourceType: Camera.PictureSourceType.CAMERA,
+//            allowEdit: true,
+//            encodingType: Camera.EncodingType.JPEG,
+//            targetWidth: 300,
+//            targetHeight: 300,
+//            popoverOptions: CameraPopoverOptions,
+//            saveToPhotoAlbum: false
+//        };
+//
+//        $cordovaCamera.getPicture(options).then(function (imageData) {
+//            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+//        }, function (err) {
+//            // An error occured.
+//        });
+//    };
+//
+//    $scope.choosePhoto = function () {
+//        var options = {
+//            quality: 75,
+//            destinationType: Camera.DestinationType.DATA_URL,
+//            sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+//            allowEdit: true,
+//            encodingType: Camera.EncodingType.JPEG,
+//            targetWidth: 300,
+//            targetHeight: 300,
+//            popoverOptions: CameraPopoverOptions,
+//            saveToPhotoAlbum: false
+//        };
+//
+//        $cordovaCamera.getPicture(options).then(function (imageData) {
+//            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+//        }, function (err) {
+//            // An error occured. Show a message to the user
+//        });
+//    }
+//});
 
 app.controller('captureCtrl', function($scope, $cordovaCapture) {
 
@@ -138,7 +138,7 @@ app.controller('captureCtrl', function($scope, $cordovaCapture) {
 });
 
 app.controller('addNewsController',
-    function($scope, $location, $cordovaCamera) {
+    function($scope, $location, $cordovaCamera, $http) {
         localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
 
         $scope.addNews = function() {
@@ -149,7 +149,7 @@ app.controller('addNewsController',
                 date: $scope.date,
                 description:$scope.newsText,
                 reporter: $scope.reporter,
-                image: $scope.imgURI;
+                image : $scope.imgURI,
                 done: false
             });
 
@@ -163,7 +163,7 @@ app.controller('addNewsController',
             $scope.showUserNews();
         };
 
-           $scope.takePhoto = function () {
+            $scope.takePhoto = function () {
                 var options = {
                     quality: 75,
                     destinationType: Camera.DestinationType.DATA_URL,
@@ -201,7 +201,7 @@ app.controller('addNewsController',
                 }, function (err) {
                     // An error occured. Show a message to the user
                 });
-            }
+            };
 
 //        $scope.archive = function() {
 //            var oldNews = $scope.newsItem;
@@ -212,6 +212,23 @@ app.controller('addNewsController',
 //            });
 //            localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
 //        };
+
+        $scope.geolocation = function() {
+            if(navigator.geolocation)
+                navigator.geolocation.getCurrentPosition(onPositionUpdate);
+        };
+
+        function onPositionUpdate(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&sensor=true";
+
+            $http.get(url).then(function(result) {
+                var address =result.data.results[2].formatted_address;
+                $scope.address = address;
+                alert($scope.address);
+            });
+        }
 
         $scope.category = function() {
             $location.path('/category');
@@ -227,11 +244,11 @@ app.controller('addNewsController',
 app.controller('showNewsCtrl', function($scope, $location){
      $scope.news_article = JSON.parse(localStorage.getItem('newsItem'));
 
-     $scope.addNews = function() {
+     $scope.goAddNews = function() {
         $location.path('/addnews');
-     };
+     }
 
-     $scope.goToLogin = function () {
-        $location.path('/');
-     };
+     $scope.logout = function() {
+        $location.path('/')
+     }
 });

@@ -1,10 +1,10 @@
 
 <button class = "btn btn-primary btn-lg" ng-click ="category()">Back</button>
-<div class="container" >
+<div class="container">
     <!--data-ng-controller="addNewsController"-->
     <section class="app-body">
-        <form  class="todo-form">
-            <!--data-ng-controller="addNewsController"-->
+        <form class="todo-form">
+            <!--data-ng-submit="addNews()"-->
             <ul class="unstyled">
                 <li data-ng-repeat="news in newsItem track by $index">
                     <input type="checkbox" data-ng-model="news.done">
@@ -12,16 +12,16 @@
                 </li>
             </ul>
 
-            Headline:
+            <label>Headline</label>
             <input type="text" data-ng-model = "headline" required>
 
-            Date:
+            <label>Date</label>
             <input type = "date" data-ng-model = "date">
 
-            Description:
+            <label>Description</label>
             <input type="text" data-ng-model="newsText" placeholder="Enter Description" />
 
-            Reporter:
+            <label>Reporter</label>
             <input type="text" data-ng-model = "reporter">
 
             <br />
@@ -34,19 +34,24 @@
                 Choose Photo
             </button>
 
-            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center"/>
+
+            <button class="btn btn-primary btn-lg" ng-click="geolocation()">
+                Get Location
+            </button>
+            <p>GPS must be on!</p>
         </form>
     </section>
-    <div ng-controller="cameraCtrl">
-        <button class="btn btn-primary btn-lg" ng-click="takePhoto()">
-            Take Photo
-        </button>
-        <button class="btn btn-primary btn-lg" ng-click="choosePhoto()">
-            Choose Photo
-        </button>
+    <!--<div ng-controller="cameraCtrl">-->
+    <!--<button class="btn btn-primary btn-lg" ng-click="takePhoto()">-->
+    <!--Take Photo-->
+    <!--</button>-->
+    <!--<button class="btn btn-primary btn-lg" ng-click="choosePhoto()">-->
+    <!--Choose Photo-->
+    <!--</button>-->
 
-        <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
-    </div>
+    <!--<img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">-->
+    <!--</div>-->
 
     <div ng-controller="captureCtrl">
         <button class="btn btn-primary btn-lg" ng-click="captureAudio()">
