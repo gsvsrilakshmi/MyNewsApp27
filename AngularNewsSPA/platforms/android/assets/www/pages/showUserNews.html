@@ -1,0 +1,14 @@
+<div ng-controller = "showNewsCtrl">
+    <button class = "btn btn-primary btn-lg" ng-click ="addNews()">Back</button>
+    <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Logout</button>
+    <hr>
+    <h2>News Article:</h2>
+    <div ng-repeat = "iNews in news_article track by $index">
+        <div class="container-fluid">
+            <div>{{iNews.headline}}</div>
+            <div>{{iNews.date}}</div>
+            <div>{{iNews.description}}</div>
+            <div>{{iNews.reporter}}</div>
+        </div>
+    </div>
+</div>

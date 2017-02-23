@@ -8,7 +8,7 @@
     <div ng-repeat="news in newsText.channel.item">
         <div class = "row">
             <div ng-if = "news.thumbnail">
-                <div><img src = "{{news.thumbnail.url}}" width = "30%" height = "30%"/></div>
+                <div><img class = "imgInNews" src = "{{news.thumbnail.url}}" /></div>
             </div>
             <div class = "newsTitle">{{news.title}}</div>
             <!--var date1 = new Date(news.pubDate);-->

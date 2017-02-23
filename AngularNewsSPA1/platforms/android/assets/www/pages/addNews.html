@@ -1,0 +1,43 @@
+<!--<script src = "css/addNews.css"></script>-->
+<!--<body>-->
+<button class = "btn btn-primary btn-lg" ng-click ="category()">Back</button>
+<div class="container" data-ng-controller="addNewsController">
+    <section class="app-body">
+        <section class="archive-control">
+            <p><a href="" data-ng-click="archive()">Remove any News Item</a></p>
+        </section>
+        <form data-ng-submit="addNews()" class="todo-form">
+            <ul class="unstyled">
+                <li data-ng-repeat="news in newsItem track by $index">
+                    <input type="checkbox" data-ng-model="news.done">
+                    <span class="done-{{ news.done }}">{{ news.text }}</span>
+                </li>
+            </ul>
+
+            <label>Headline</label>
+            <input type="text" data-ng-model = "headline" required>
+
+            <label>Date</label>
+            <input type = "date"data-ng-model = "date">
+
+            <label>Description</label>
+            <input type="text" data-ng-model = "description"/>
+
+            <label>Reporter</label>
+            <input type="text" data-ng-model = "reporter">
+
+            <input type="text" data-ng-model="newsText" placeholder="Enter Description" />
+            <br />
+            <input type="submit" value="Add News" />
+        </form>
+    </section>
+    <button class="btn btn-primary btn-lg" ng-click="takePhoto()">
+        Take Photo
+    </button>
+    <button class="btn btn-primary btn-lg" ng-click="choosePhoto()">
+        Choose Photo
+    </button>
+
+    <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center">
+</div>
+<!--</body>-->

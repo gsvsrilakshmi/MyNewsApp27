@@ -1,0 +1,13 @@
+ <div ng-controller="categoryCtrl as c">
+     <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Home</button>
+     <button class = "btn btn-primary btn-lg" ng-click="addNews()">Add News</button>
+     <div class="container-fluid">
+         <div class="col-sm-4">
+             <div class = "btn-group-vertical">
+                 <div class="col-sm-offset-2 col-sm-10">
+                     <button class="btn btn-success btn-lg" name = "button" ng-repeat="keyItem in c.getKeys()" ng-click = "newsDisplay(keyItem)">{{keyItem}}</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>

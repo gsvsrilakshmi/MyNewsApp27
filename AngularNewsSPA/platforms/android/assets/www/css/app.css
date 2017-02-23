@@ -75,3 +75,8 @@ div {
   font-family: "Comic Sans MS";
   font-size: 130%;
 }
+
+.imgInNews {
+    width : 30%;
+    height = 30%;
+}
