@@ -1,14 +1,21 @@
 <div ng-controller = "showNewsCtrl">
-    <button class = "btn btn-primary btn-lg" ng-click ="goAddNews()">Back</button>
-    <button class = "btn btn-primary btn-lg" ng-click ="logout()">Logout</button>
+    <nav class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="pages/login.html">Logout</a></li>
+            <li class="active"><a href="pages/addNews.html">Add News</a></li>
+            <li class="active"><a href="pages/category.html">Category</a></li>
+        </ul>
+    </nav>
+
+    <button class = "btn btn-primary btn-md" ng-click ="goAddNews()">Back</button>
+    <button class = "btn btn-primary btn-md" ng-click ="logout()">Logout</button>
     <h2>News Article:</h2>
     <div ng-repeat = "iNews in news_article track by $index">
         <div class="container-fluid">
+            <div><img ng-show = "iNews.image" ng-src = "{{iNews.image}}"/></div>
             <div>{{iNews.headline}}</div>
             <div>{{iNews.date}}</div>
-            <div>{{iNews.description}}</div>
-            <div>{{iNews.reporter}}</div>
-            <div><img ng-show = "iNews.image" ng-src = "{{iNews.image}}"/></div>
+            <div>{{iNews.description}} BY  {{iNews.reporter}} </div>
         </div>
     </div>
 </div>

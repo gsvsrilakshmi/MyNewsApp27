@@ -203,16 +203,6 @@ app.controller('addNewsController',
                 });
             };
 
-//        $scope.archive = function() {
-//            var oldNews = $scope.newsItem;
-//            $scope.newsItem = [];
-//            angular.forEach(oldNews, function(news){
-//                if (!news.done)
-//                    $scope.newsItem.push(news);
-//            });
-//            localStorage.setItem('newsItem', JSON.stringify($scope.newsItem));
-//        };
-
         $scope.geolocation = function() {
             if(navigator.geolocation)
                 navigator.geolocation.getCurrentPosition(onPositionUpdate);

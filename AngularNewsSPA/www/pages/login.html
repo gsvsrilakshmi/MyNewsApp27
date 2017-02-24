@@ -12,10 +12,8 @@
                 <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
             </div>
 
-            <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+            <div class="form-group">
                 <input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password...." required>
-                <!--<p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.  ng-minlength="6" ng-maxlength="15"</p>-->
-                <!--<p ng-show="userForm.password.$error.maxlength" class="help-block">Password must be in between 6 and 15.</p>-->
             </div>
 
             <div class="form-group">
@@ -26,7 +24,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">SignIn</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign In</button>
 
         </form>
     </div>

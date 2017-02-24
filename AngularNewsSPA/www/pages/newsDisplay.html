@@ -1,10 +1,19 @@
 
 <div ng-controller="newsdisplayCtrl">
-    <span style = "color: green" ng-if = "online">You are online!</span>
-    <span style="color: red" ng-if = "!online">You are offline!</span>
-    <hr>
-    <button class = "btn btn-primary btn-lg" ng-click ="goToLogin()">Home</button>
-    <button class = "btn btn-primary btn-lg" ng-click ="goTocategory()">Back</button>
+    <nav class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="pages/login.html">Logout</a></li>
+            <li class="active"><a href="pages/addNews.html">Add News</a></li>
+            <li class="active"><a href="pages/category.html">Category</a></li>
+        </ul>
+    </nav>
+
+    <span style = "color: green" ng-if = "online">You are online!</span><br>
+    <span style="color: red" ng-if = "!online">You are offline!</span><br>
+
+    <button class = "btn btn-primary btn-md" ng-click ="goToLogin()">Home</button>
+    <button class = "btn btn-primary btn-md" ng-click ="goTocategory()">Back</button>
+
     <div ng-repeat="news in newsText.channel.item">
         <div class = "row">
             <div ng-if = "news.thumbnail">
@@ -14,6 +23,7 @@
             <!--var date1 = new Date(news.pubDate);-->
             <div>{{news.pubDate | date: 'medium' : +1030}}</div>
             <div>{{news.description}}</div>
+            <hr>
         </div>
     </div>
 </div>

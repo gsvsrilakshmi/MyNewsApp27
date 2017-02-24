@@ -25,9 +25,9 @@
 /*}*/
 
 body {
-  padding-top:5px;
+  padding-top:1px;
   align:center;
-  background-color: #cccccc;
+  background-color: white;
 }
 
 input[type=date], select {

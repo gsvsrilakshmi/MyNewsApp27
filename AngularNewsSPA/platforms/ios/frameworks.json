@@ -2,6 +2,6 @@
     "SystemConfiguration.framework": 1,
     "CoreTelephony.framework": 1,
     "ImageIO.framework": 1,
-    "CoreLocation.framework": 1,
+    "CoreLocation.framework": 2,
     "AVFoundation.framework": 1
 }
