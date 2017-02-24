@@ -1,0 +1,46 @@
+<nav class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li><a href="pages/login.html">Logout</a></li>
+        <li class="active"><a href="pages/addNews.html">Add News</a></li>
+        <li class="active"><a href="pages/category.html">Category</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <!--data-ng-controller="addNewsController"-->
+
+    <section class="app-body">
+        <button class = "btn btn-primary btn-md" ng-click ="category()">Back</button>
+        <form class="todo-form">
+            <!--data-ng-submit="addNews()"-->
+
+            <input type="text" data-ng-model = "headline" placeholder="Headline" required>
+
+            <input type = "date" data-ng-model = "date" placeholder="Date" required>
+
+            <input type="text" data-ng-model = "newsText" placeholder="Enter Description" />
+
+            <input type="text" data-ng-model = "reporter" placeholder="Reporter" required>
+
+            <br />
+
+            <div><button class="btn btn-primary btn-md" ng-click = "addNews()" value="Add News">Add News</button></div>
+
+            <button class="btn btn-primary btn-lg" ng-click="takePhoto()">
+                Take Photo
+            </button>
+            <button class="btn btn-primary btn-lg" ng-click="choosePhoto()">
+                Choose Photo
+            </button>
+            <br/>
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}"/>
+
+            <button class="btn btn-primary btn-lg" ng-click="captureAudio()">
+                Capture Audio
+            </button>
+            <button class="btn btn-primary btn-lg" ng-click="captureVideo()">
+                Capture Video
+            </button>
+        </form>
+    </section>
+</div>

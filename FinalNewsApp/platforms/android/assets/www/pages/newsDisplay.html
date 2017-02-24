@@ -1,0 +1,28 @@
+
+<div ng-controller="newsdisplayCtrl">
+    <nav class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="pages/login.html">Logout</a></li>
+            <li class="active"><a href="pages/addNews.html">Add News</a></li>
+            <li class="active"><a href="pages/category.html">Category</a></li>
+        </ul>
+    </nav>
+
+    <span style="color: red" ng-if = "!online">Check Connection!</span><br>
+
+    <button class = "btn btn-primary btn-md" ng-click ="goToLogin()">Logout</button>
+    <button class = "btn btn-primary btn-md" ng-click ="goTocategory()">Back</button>
+
+    <div ng-repeat="news in newsText.channel.item">
+        <div class = "row">
+            <div ng-if = "news.thumbnail">
+                <div><img class = "imgInNews" src = "{{news.thumbnail.url}}" /></div>
+            </div>
+            <div class = "newsTitle">{{news.title}}</div>
+            <!--var date1 = new Date(news.pubDate);-->
+            <div>{{news.pubDate | date: 'medium' : +1030}}</div>
+            <div>{{news.description}}</div>
+            <hr>
+        </div>
+    </div>
+</div>

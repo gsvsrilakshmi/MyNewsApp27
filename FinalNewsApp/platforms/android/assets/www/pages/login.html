@@ -1,0 +1,31 @@
+<div class = "container" ng-controller="loginCtrl">
+    <!--<span style = "color: green" ng-if = "online">You are online!</span>-->
+    <!--<span style="color: red" ng-if = "!online">You are offline!</span>-->
+    <div class="col-sm-6">
+        <!-- FORM ============ -->
+        <h3>NEWS 24/7</h3>
+
+        <form name="userForm" ng-submit="submitForm()">
+            <h4>LOGIN</h4>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email...." required>
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password...." required>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <input type="checkbox"> Remember me
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign In</button>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div ng-controller = "showNewsCtrl">
+    <nav class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="pages/login.html">Logout</a></li>
+            <li class="active"><a href="pages/addNews.html">Add News</a></li>
+            <li class="active"><a href="pages/category.html">Category</a></li>
+        </ul>
+    </nav>
+
+    <button class = "btn btn-primary btn-md" ng-click ="goAddNews()">Back</button>
+    <button class = "btn btn-primary btn-md" ng-click ="logout()">Logout</button>
+    <h2>News Article:</h2>
+    <div ng-repeat = "iNews in news_article track by $index">
+        <div class="container-fluid">
+            <div class = "row">
+                <div><img ng-show = "iNews.image" ng-src = "{{iNews.image}}"/></div>
+                <video>
+                    <source ng-show = "iNews.path" type = "video/mp4" ng-src="{{iNews.path}}"/>
+                </video>
+                <br>
+                Headline:<div>{{iNews.headline}}</div>
+                Dated on:<div>{{iNews.date}}</div>
+                Description:<div>{{iNews.description}}</div>
+                Location:<div>{{iNews.location}}</div>
+                BY  <div>{{iNews.reporter}}</div>
+            </div>
+        </div>
+    </div>
+</div>
