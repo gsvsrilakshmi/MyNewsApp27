@@ -1,0 +1,17 @@
+body {
+    margin:0;
+}
+
+.title {
+    padding-top : 3%;
+    align-items: center;
+}
+
+.noteText {
+    padding-top : 4%;
+    align-content: center;
+}
+
+.homePage {
+    padding-top: 10%
+}

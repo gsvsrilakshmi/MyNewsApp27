@@ -1,0 +1,26 @@
+<div ng-controller="homeCtrl">
+  <!-- <div class="navbar navbar-inverse navbar-static-top">
+    <!-- <ul class="nav navbar-nav navbar-left">
+    <ul class = "ulPadding">
+      <li class = "liPadding"><a class="active" href="#home">Home</a></li>
+      <li><a class = "aPadding" href="pages/addSticky.html">Add Sticky</a></li>
+    </ul>
+  </div> -->
+
+  <div class="w3-bar w3-black">
+    <a class="w3-bar-item w3-button" href="#">Home</a>
+    <a class="w3-bar-item w3-button" href="pages/addSticky.html">Add Sticky</a>
+   <!--  <a class="w3-bar-item w3-button" href="#">Link 2</a>
+    <a class="w3-bar-item w3-button" href="#">Link 3</a> -->
+  </div>
+
+  <div class = "homePage">
+    <div ng-repeat = "note in getNotes()">
+        <div>{{note}}</div>
+    </div>
+
+    <div>
+        <button class = "btn btn-success btn-md" ng-model = "createNote" ng-click = "addSticky()">Create Note</button>
+    </div>
+  </div>
+</div>

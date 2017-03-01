@@ -1,0 +1,29 @@
+<div ng-controller="addStickyCtrl">
+
+<div class="w3-bar w3-black">
+  <a class="w3-bar-item w3-button" href="pages/home.html">Logout</a>
+  <a class="w3-bar-item w3-button" href="#">Link 1</a>
+  <!-- <a class="w3-bar-item w3-button" href="#">Link 2</a>
+  <a class="w3-bar-item w3-button" href="#">Link 3</a> -->
+</div>  
+
+  <form class="form-horizontal">
+      <div class="form-group">
+        
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model = "title" placeholder="Enter title">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10"> 
+          <input type="password" class="form-control" ng-model = "noteText" placeholder="Add a Note">
+        </div>
+      </div>
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-success btn-md" ng-model = "addNote" ng-click = "addNote(title,noteText)">Add Note</button>
+        </div>
+      </div>
+  </form>
+
+</div>
