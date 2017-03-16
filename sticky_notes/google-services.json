@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "648413381008",
+    "project_id": "sample-34e78"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648413381008:android:5865f2c9e71754b0",
+        "android_client_info": {
+          "package_name": "com.motivitylabs.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648413381008-pfaf11c3b2r0ahg4hlsee9up4nl49a6r.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "648413381008-of37cb6d803vs2dmgodopiv7tldlii7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.motivitylabs.sample",
+            "certificate_hash": "4af13dc49d41ebdf039f418272c7585c8e9476dc"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyouOS_qt1NVUeyd0vEoWULLozetsIl6c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
