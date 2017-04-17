@@ -1,0 +1,28 @@
+<div>
+
+  <div id="form-container">
+  
+      <div class="text-center">
+          
+          <!-- the links to our nested states using relative paths -->
+          <!-- add the active class if the state matches our ui-sref -->
+        <div id="status-buttons" class="text-center" >
+          <a class = "disabled" ui-sref-active="active" ui-sref = ".location"><h1><span>1</span></h1> Location</a><div class="line-margin"></div>
+          <a class = "disabled" ui-sref-active="active" ui-sref = ".reasons"><h1><span>2</span></h1> Request Type</a><div class="line-margin"></div>
+          <a class = "disabled" ui-sref-active="active" ui-sref = ".schedule"><h1><span>3</span></h1> Time slot</a><div class="line-margin"></div>
+          <a class = "disabled" ui-sref-active="active" ui-sref = ".confirmDetails"><h1><span>4</span></h1> Confirm</a>
+        </div>
+      
+      </div>
+  </div>
+
+</div>
+
+<div class="form-container-inner">
+      <form id="signup-form" class="form-area-styles">
+          <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+
+      </form>
+</div>
+

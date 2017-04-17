@@ -1,0 +1,35 @@
+<div class="w3-container"><p>Make an appointment with a licensed healthcare professional for a <br/> variety of services and screenings</p></div>
+
+<div class="form-group">
+	<center><label for="location" class="label-marg-45"><div class="required">Reason for Visit</div></label></center>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4  col-xs-12">
+<div>
+<select class="form-control" ng-options="reason.indetail for reason in reasons | orderBy: 'indetail.toString()'" ng-model="data.selected" required>        
+  <option value = "" label= "Please Select"></option>
+        <!-- <option ng-repeat="reason in reasonsList" value="{{reason.Id}}"
+                        ng-selected="{{reason.Selected == true }}">
+                {{reason.reason}}
+        </option> -->
+</select> </div>
+
+</div>
+<div class="col-sm-3"></div>
+</div>
+<div class="row emergencycall"><center><i>In case of Emergency, call </i> &nbsp;<img src="images/ico-phone.png"><b> 108</b></center></div>
+<div class="row marg-30">
+<div class="form-group">
+<div class="col-sm-3 col-sm-offset-3">
+   <a ui-sref="form.location" class="btn btn-block back-btn" >
+    BACK  
+    </a>
+</div>
+<div class="col-sm-4 flex-disply">
+   <a ui-sref="form.schedule" data-ng-class="{'disabled': !data.selected}" class="btn btn-block next-btn no-left-mrg"  ng-click="getSlotsByLocation()">
+    NEXT 
+    </a>
+</div>
+</div>
+</div>
+</div>
