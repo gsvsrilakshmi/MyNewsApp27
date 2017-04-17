@@ -1,0 +1,160 @@
+
+<div class="alert alert-info">
+  <!-- <strong>Info!</strong> --><center><!--<span class="glyphicon glyphicon-info-sign"></span>--><img src="../images/ico_info.png" />  You have requested an appointment for <b>{{ reasonType }}</b> on <b>{{ selectedDate | date: medium }}</b> at <b>{{ selectedSlot }} </b> </center>
+</div>
+<div class="container">
+
+    <div class="col-sm-12 success-hed">User Details</div>
+  <div class="col-lg-12 ">
+  <div class="row">
+        <form name="form" id="myForm" class="form-field-styles">
+          <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-6 form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+                <label class="required">First Name</label>
+                <input type="text" limit-to = "20" name="firstname" ng-model="user.firstname" ng-minlength = "4" ng-maxlength = "20" placeholder="" class="form-control errorDisplay" required>
+                <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block errorDisplay">First Name is required</span>
+                <span ng-show="form.firstname.$dirty && form.firstname.$error.minlength" class="help-block errorDisplay">First Name must contain minimum of 4 characters.</span>
+                <!-- <span ng-show="form.firstname.$dirty && form.firstname.$error.maxlength" class="help-block errorDisplay">First Name should not exceed 20 characters.</span> -->
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error':form.lastname.$dirty && form.lastname.$error.required }">
+                <label class="required">Last Name</label>
+                <input type="text" limit-to = "20" name ="lastname" ng-minlength = "1" ng-maxlength = "20" ng-model="user.lastname" placeholder="" class="form-control" required>
+                  <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Last Name is Required</span>
+                  <span ng-show="form.lastname.$dirty && form.lastname.$error.minlength" class="help-block errorDisplay">Last Name must contain minimum of 1 character.</span>
+                <span ng-show="form.lastname.$dirty && form.lastname.$error.maxlength" class="help-block errorDisplay">Last Name should not exceed 20 characters.</span>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label class="required">Date of Birth</label>
+                <div class="row">
+                <div class="col-sm-4" ng-class="{'has-error': form.month.$dirty && form.month.$error.required}">
+                 <select class="form-control" name="month" ng-model="user.month" ng-options="o for o in months" required>
+                 <option value="" selected>Month</option>
+                </select>
+                <span ng-show ="form.month.$dirty && form.month.$error.required" class="help-block"> Month is required</span>
+                </div>
+                <div class="col-sm-4" ng-class="{'has-error' : form.day.$dirty && form.day.$error.required}">
+                <select class="form-control" name="day" ng-model="user.day" ng-options="o for o in days" required>
+                <option value="" selected >Date</option>
+                </select>
+                <span ng-show="form.day.$dirty && form.day.$error.required" class="help-block"> Date is Required</span>
+                </div>
+                <div class="col-sm-4" ng-class="{'has-error': form.year.$dirty && form.year.$error.required}">
+                 <select class="form-control" name ="year" ng-model="user.year" ng-options="o for o in years" required>
+                  <option value="" selected >Year</option>
+                </select>
+                <span ng-show="form.year.$dirty && form.year.$error.required" class="help-block"> Year is Required</span>
+                </div>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group" >
+              <label class="required">Gender</label>
+              <div class="row">
+                
+              <div class="col-sm-4"><label class="radio-inline"><input type="radio" name="gender" value="Male" ng-model="user.gender" required="true">Male   </label></div>
+
+              <div class="col-sm-4"><label class="radio-inline"><input type="radio" name="gender" value="Female" ng-model="user.gender" required="true">Female</label></div>
+                
+              </div>
+              <span ng-show="form.gender.$error.required && form.gender.$dirty" class="help-block"> gender is required</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.email.$dirty && form.email.$error.required}">
+                <label class="required">Email Address</label>
+                <input type="email" limit-to = "40" name="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-minlength = "20" ng-maxlength = "40" ng-model="user.email" placeholder="" class="form-control" required>
+                <p class="field-hint-text">Appointment details will be sent to this email.</p>
+                <span ng-show=" form.email.$dirty && form.email.$error.required" class="help-block errorDisplay"> Email is required</span>
+                <span ng-show=" form.email.$error.minlength || form.email.$error.pattern" class="help-block errorDisplay"> Please enter a valid email address with atleast 20 characters.</span>
+               <!--  <span ng-show=" form.email.$dirty && form.email.$error.maxlength" class="help-block errorDisplay"> Email should not exceed 40 characters.</span> -->
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.contactNumber.$dirty && form.contactNumber.$error.required }">
+                <label class="required">Contact Number</label>
+                <input type="number" limit-to="10" name= "contactNumber" ng-pattern="/^[0-9]{10,11}$/" ng-model="user.contactNumber" ng-minlength = "10" ng-maxlength = "10" placeholder="Best number to contact you" class="form-control" disable-arrows required>
+                <span ng-show="form.contactNumber.$error.pattern && form.contactNumber.$error.minlength" class="help-block errorDisplay">Please enter a 10-digit phone number. </span>
+                <span ng-show="form.contactNumber.$dirty && form.contactNumber.$error.required" class="help-block errorDisplay"  > Contact number is required.</span>
+                <!-- <span ng-show="form.contactNumber.$dirty && form.contactNumber.$error.maxlength" class="help-block errorDisplay" > Please enter a 10-digit phone number.</span> -->
+                
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Emergency Contact Person (if Any)</label>
+              <input type="text" limit-to = "50" name = "contactPerson" ng-minlength = "5" ng-maxlength = "50" ng-model="user.contactPerson" placeholder="Parent, Guardian or Nurse" class="form-control">
+              <span ng-show="form.contactPerson.$error.maxlength" class="help-block errorDisplay" > Contact Person Name should not exceed 50 characters.</span>
+              <span ng-show="form.contactPerson.$error.minlength" class="help-block errorDisplay" > Contact Person Name should be of 5 characters atleast.</span>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Emergency Contact Number (if Any)</label>
+                <input type="number" limit-to = "10" name = "contactNumberOther" ng-pattern="/^[0-9]{10,11}$/" ng-model="user.contactNumberOther" ng-minlength = "10" ng-maxlength = "10" placeholder="" class="form-control errorDisplay" disable-arrows>
+               <!--  <span ng-show="form.contactNumberOther.$error.maxlength" class="help-block errorDisplay" > Please enter a 10-digit phone number</span> -->
+                <span ng-show="form.contactNumberOther.$error.pattern && form.contactNumberOther.$error.minlength" class="help-block errorDisplay">Please enter a 10-digit phone number. </span>
+  
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.address1.$dirty && form.address1.$error.required}">
+                <label class="required">Address</label>
+                <input type="text" limit-to = "40" name = "address1" ng-model="user.address1" ng-minlength = "5" ng-maxlength = "40" placeholder="" class="form-control" required>
+                <span ng-show="form.address1.$dirty && form.address1.$error.required" class="help-block errorDisplay">Address is required</span>
+                <span ng-show="form.address1.$dirty && form.address1.$error.minlength" class="help-block errorDisplay" > Address must contain minimum of 5 characters.</span>
+                <!-- <span ng-show="form.address1.$dirty && form.address1.$error.maxlength" class="help-block errorDisplay" > Address must contain maximum of 50 characters.</span> -->
+
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Address Line 2</label>
+                <input type="text" limit-to = "50" name="address2" ng-model="user.address2" placeholder="" ng-minlength = "5" ng-maxlength = "50" class="form-control">
+                <span ng-show="form.address2.$dirty && form.address2.$error.minlength" class="help-block errorDisplay" > Address must contain minimum of 5 characters</span>
+                <!-- <span ng-show="form.address2.$dirty && form.address2.$error.maxlength" class="help-block errorDisplay" > Address must contain maximum of 50 characters.</span> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                
+                <div class="row">
+                <div class="col-sm-6" ng-class="{'has-error': form.state.$dirty && form.state.$error.required}">
+                <label class="required">State</label>
+                <select class="form-control" name="state" ng-model="user.state" ng-options="o for o in states" required>
+                            <option value="" selected >Select a state</option>
+                </select>
+                <span ng-show="form.state.$dirty && form.state.$error.required" class="help-block errorDisplay">State is required</span>
+                </div>
+                <div class="col-sm-6" ng-class="{'has-error': form.city.$dirty && form.city.$error.required}">
+                <label class="required">City</label>
+                <select class="form-control" name="city" ng-model="user.city" ng-options="o for o in cities | orderBy:'toString()'" required>
+                            <option value="" selected >Select a city</option>
+                </select>
+                <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block errorDisplay">City is required</span>
+                </div>
+                
+                </div>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.zip.$dirty && form.zip.$error.required}">
+                <label class="required">Zip Code</label>
+                <input type="number" limit-to = "6" name="zip" ng-pattern="/^\d[0-9]{0,6}$/" ng-minlength = "6" ng-maxlength = "6" ng-model="user.zip" class="form-control" disable-arrows required>
+               
+                <span ng-show="form.zip.$dirty && form.zip.$error.required" class="help-block errorDisplay">Zip Code is required</span>
+                <span ng-show="form.zip.$error.minlength || form.zip.$error.maxlength || form.zip.$error.pattern" class="help-block errorDisplay">Zip Code must contain 6 digits</span>
+              </div>
+            </div>    
+      
+            <div class="marg-60 marg-30">
+    
+            <div class="col-sm-offset-3 col-sm-3">
+            <a class="btn btn-block back-btn cancl-btn" ng-click = "cancel()">CANCEL</a>
+          </div>
+          <div class="col-sm-4 flex-disply"> 
+          <a ng-click="success()" data-ng-class="{'disabled': form.$invalid}" class="btn btn-block next-btn no-left-mrg"> SUBMIT </a>
+          </div>
+          <div class = "col-sm-8 errorDisplay">{{ errorMsg }}</div>
+          </div>
+          </div>
+        </form> 
+        </div>
+  </div>
+  </div>
+  <div class="ftr-gap"></div>

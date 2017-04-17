@@ -1,0 +1,61 @@
+<div>
+
+<div class = "fonts">
+
+<div class="form-group">
+    <div class = "location">
+      <center><label for="location">Almost Done!</label></center>
+    </div>
+    </div>
+
+    <div class = "review">
+      <p> Please review and confirm your appointment details </p>
+    </div>
+
+    <div class="row">
+    <div class="form-group">
+      	<div class = "details text-center">
+      		<label>Location : </label>
+            <label class="label-value">{{ data.searchTextSelected.name }}</label>
+      		<!-- <label class="right-headers-data" style="">{{eventdetails.event}}</label> -->
+      	</div>
+
+      	<div class = "details text-center">
+      		<label>Service Type : </label>
+            <label class="label-value">{{ data.selected.indetail }}</label>
+      		<!-- <label class="right-headers-data" style="">{{eventdetails.event}}</label> -->
+      	</div>
+
+      	<div class = "details text-center">
+      		<label>Date : </label>
+            <label class="label-value">{{toggledDay[0] | date: 'EEEE, MMMM d'}}</label>
+      		<!-- <label class="right-headers-data" style="">{{eventdetails.event}}</label> -->
+      	</div>
+
+      	<div class = "details text-center">
+      		<label>Time : </label>
+            <label class="label-value">{{ toggledDay[1].start_Time + ' - ' + toggledDay[1].end_Time }}</label>
+      		<!-- <label class="right-headers-data" style="">{{eventdetails.event}}</label> -->
+      	</div>
+
+
+     </div>
+    </div>
+<div class="marg-30">
+    <div class="col-sm-offset-3 col-sm-3" >
+       <a ui-sref="form.schedule" class="btn btn-block back-btn" ng-click="getSlotsByLocation()">
+        BACK  
+        </a>
+        </div>
+   
+ 
+<div class="col-sm-4 flex-disply">
+ <a ui-sref="login" class="btn btn-block next-btn confm-next no-left-mrg">
+      CONFIRM 
+      </a>
+</div>
+ 
+  </div>
+
+  </div>
+</div>

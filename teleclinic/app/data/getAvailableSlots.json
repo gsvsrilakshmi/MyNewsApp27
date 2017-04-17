@@ -1,0 +1,399 @@
+{
+    "week1": [
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-03-30T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "No",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-03-31T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-01T18:00:42.412327"
+        }
+    ],
+    "week3": [
+        {
+            "slots": [
+                {
+                    "available": "No",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-09T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-10T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-11T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-12T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-13T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-14T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-15T18:00:42.412327"
+        }
+    ],
+    "week2": [
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-02T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-03T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-04T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-05T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-06T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-07T18:00:42.412327"
+        },
+        {
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ],
+            "date": "2017-04-08T18:00:42.412327"
+        }
+    ]
+}

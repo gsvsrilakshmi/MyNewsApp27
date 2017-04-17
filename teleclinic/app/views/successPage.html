@@ -1,0 +1,22 @@
+<div class="alert alert-info" style = "background-color: yellow;">
+  <!-- <strong>Info!</strong> --><center><!--<span class="glyphicon glyphicon-info-sign"></span>--><img src="../images/ico_info.png" />  You have requested an appointment for <b>{{ reasonType }}</b> on <b>{{ selectedDate | date: medium}}</b> at <b>{{ selectedSlot }} </b> </center>
+</div>
+
+<div class="panel-body" ng-controller="SigninCtrl">
+	<br/> 
+    <center><img class ="img-circle" /></center>
+    <br/>
+
+	<center><label for="success" class="success-hed text-center">Appointment Confirmation!</label> 
+
+	<p class="success-sub-hed-italic"> Thanks for choosing 24/7 TeleClinic!</p>
+
+	<p class="success-sub-hed" ng-model="email"> Appointment details will be sent to your <br/>email address <a>{{email}} </a></p> <br/> 
+
+	<center><div class="line-margin" ></div></center>
+
+	<!-- <label class="success-hed"> For any questions call (+91) 91480-11111</label> <br/> -->
+
+	<a ui-sref="form.location" class="hyperlink-style"> Book a New Appointment </a><br/><br/>
+</center>
+</div>

@@ -1,0 +1,51 @@
+
+<div>
+<div class="alert alert-warning" ><center><img src="../images/ico_info-white.png" /> Working hours are from <b> 8 AM - 5 PM</b></center>
+</div>
+<ul class="nav nav-pills">
+    <li ng-class="{'hover':!iscurrentWeekNavPillActive,'active':iscurrentWeekNavPillActive}"><a data-toggle="pill"ng-href="" ng-click="currentWeekDates()">{{firstTab}}</a></li>
+    <li ng-class="{'hover':!isfirstWeekNavPillActive,'active':isfirstWeekNavPillActive}"><a data-toggle="pill" ng-href="" ng-click="firstWeekDates()">{{secondTab}}</a></li>
+    <li ng-class="{'hover':!issecondWeekNavPillActive,'active':issecondWeekNavPillActive}"><a data-toggle="pill" ng-href="" ng-click="secondWeekDates()">{{thirdTab}}</a></li>
+  </ul>
+</div>
+ <div class="tab-content">
+    <div class="row seven-cols" style="overflow-x:auto;">
+		<table class="table timeslot-btn">
+			<thead>
+            <tr>
+        		<th ng-repeat="day in weekDays"><h4 style = "text-align: center;"> {{day}} </h4></th>
+            </tr>
+	     </thead>
+<tr>
+<td ng-repeat="dayData in weekData"><input type="button" ng-disabled="dayData.slots[0].available=='No'||dayData.slots[0].available=='Blocked'" ng-model="data.toggledDay" ng-click="toggleButton(dayData.slots[0].available,$index,0,weekData)" class="btn" ng-class="{'Available-btn' : dayData.slots[0].available=='Yes','Booked-btn':dayData.slots[0].available=='No','Selected-btn':dayData.slots[0].available=='Selected','notavilable-btn' : dayData.slots[0].available=='Blocked'}" value="{{dayData.slots[0].start_Time +' - '+dayData.slots[0].end_Time }}">
+</td>
+</tr>
+
+<tr>
+<td ng-repeat="dayData in weekData">
+<input type="button" ng-disabled="dayData.slots[1].available=='No'||dayData.slots[1].available=='Blocked'" ng-click="toggleButton(dayData.slots[1].available,$index,1,weekData)" class="btn" ng-class="{'Available-btn' : dayData.slots[1].available=='Yes','Booked-btn':dayData.slots[1].available=='No','Selected-btn':dayData.slots[1].available=='Selected','notavilable-btn' : dayData.slots[1].available=='Blocked'}" value="{{dayData.slots[1].start_Time +' - '+dayData.slots[1].end_Time }}">
+</td>
+</tr>
+
+<tr>
+<td ng-repeat="dayData in weekData">
+<input type="button" ng-disabled="dayData.slots[2].available=='No'||dayData.slots[2].available=='Blocked'" ng-click="toggleButton(dayData.slots[2].available,$index,2,weekData)" class="btn" ng-class="{'Available-btn' : dayData.slots[2].available=='Yes','Booked-btn':dayData.slots[2].available=='No','Selected-btn':dayData.slots[2].available=='Selected','notavilable-btn' : dayData.slots[2].available=='Blocked'}" value="{{dayData.slots[2].start_Time +' - '+dayData.slots[2].end_Time }}">
+</td>
+</tr> 
+
+</table>
+</div>
+</div> 
+
+<div class="col-sm-12 no-pad">
+<div class="col-sm-offset-3 col-sm-3">
+<a ui-sref="form.reasons" class="btn btn-block back-btn" >
+    BACK  
+    </a>
+</div>
+<div class="col-sm-4 flex-disply "> 
+<a ui-sref="form.confirmDetails" data-ng-class="{'disabled': !toggledDay[1]}" class="btn btn-block next-btn no-left-mrg" ng-click="getConfirmedDetails()">
+    NEXT
+    </a>
+</div>
+</div>

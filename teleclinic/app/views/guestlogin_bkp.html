@@ -1,0 +1,147 @@
+
+<!-- <div>
+<div class="custDiv"><center><span class="glyphicon glyphicon-info-sign"></span> You have requested an appointment for a <b>Yearly Check-up</b> on <b>Thursday, March 16 </b>at <b> 11 AM - 2 PM</b> <a href="">Want to Change?</a></center>
+</div>
+
+</div> -->
+<div class="alert alert-info">
+  <!-- <strong>Info!</strong> --><center><span class="glyphicon glyphicon-info-sign"></span>  You have requested an appointment for a <b>Yearly Check-up</b> on <b>Thursday, March 16 </b>at <b> 11 AM - 2 PM</b> <a href=""><u>Want to Change?</u></a></center>
+</div>
+<div class="container">
+
+    <h3 class="">User Detials</h1>
+  <div class="col-lg-12 ">
+  <div class="row">
+        <form name="form" id="myForm">
+          <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-6 form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+                <label class="required">First Name</label>
+                <input type="text" name="firstname" ng-model="user.firstname" placeholder="" class="form-control" required>
+                <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">First Name is required</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error':form.lastname.$dirty && form.lastname.$error.required }">
+                <label class="required">Last Name</label>
+                <input type="text" name ="lastname" ng-model="user.lastname" placeholder="" class="form-control" required>
+                  <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Last Name is Required</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label class="required">Date of Birth</label>
+                <div class="row">
+                <div class="col-sm-4" ng-class="{'has-error': form.month.$dirty && form.month.$error.required}">
+                 <select class="form-control" name="month" ng-model="user.month" ng-options="o for o in months" required>
+                 <option value="" selected>MM</option>
+                </select>
+                <span ng-show ="form.month.$dirty && form.month.$error.required" class="help-block"> Month is required</span>
+                </div>
+                <div class="col-sm-4" ng-class="{'has-error' : form.day.$dirty && form.day.$error.required}">
+                <select class="form-control" name="day" ng-model="user.day" ng-options="o for o in days" required>
+                <option value="" selected >DD</option>
+                </select>
+                <span ng-show="form.day.$dirty && form.day.$error.required" class="help-block"> Date is Required</span>
+                </div>
+                <div class="col-sm-4" ng-class="{'has-error': form.year.$dirty && form.year.$error.required}">
+                 <select class="form-control" name ="year" ng-model="user.year" ng-options="o for o in years" required>
+                  <option value="" selected >YYYY</option>
+                </select>
+                <span ng-show="form.year.$dirty && form.year.$error.required" class="help-block"> Year is Required</span>
+                </div>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group" >
+              <label class="required">Gender</label>
+              <div class="row">
+                
+              <div class="col-sm-4"><label class="radio-inline"><input type="radio" name="gender" value="Male" ng-model="user.gender" required="true">Male   </label></div>
+
+              <div class="col-sm-4"><label class="radio-inline"><input type="radio" name="gender" value="FeMale" ng-model="user.gender" required="true">FeMale</label></div>
+                
+              </div>
+              <span ng-show="form.gender.$error.required && form.gender.$dirty" class="help-block"> gender is required</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.email.$dirty && form.email.$error.required}">
+                <label class="required">Email Address</label>
+                <input type="text" name="email" ng-model="user.email" placeholder="" class="form-control" required>
+                <p align="justify">Will send you the details of your appointment request.
+                This email also includes cancellation.</p>
+                <span ng-show=" form.email.$dirty && form.email.$error.required" class="help-block"> email is required</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.contactNumber.$dirty && form.contactNumber.$error.required }">
+                <label class="required">Contact Number</label>
+                <input type="text" name= "contactNumber" ng-model="user.contactNumber" ng-pattern="numberPattern" placeholder="Best number to contact you" class="form-control" required>
+                <span ng-show="form.contactNumber.$dirty && form.contactNumber.$error.required" class="help-block" > contact number is required</span>
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Contact Person (if different from person)</label>
+              <input type="text" ng-model="user.contactPerson" placeholder="Parent, Gaurdian or Nurse" class="form-control">
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Alternative Contact Number (if Any)</label>
+                <input type="text" ng-model="user.contactNumberOther" placeholder="" class="form-control">
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.address1.$dirty && form.address1.$error.required}">
+                <label class="required">Address</label>
+                <input type="text" name = "address1" ng-model="user.address1" placeholder="" class="form-control" required>
+                <span ng-show="form.address1.$dirty && form.address1.$error.required" class="help-block">Address is required</span>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Address Line 2</label>
+                <input type="text" ng-model="user.address2" placeholder="" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                
+                <div class="row">
+                <div class="col-sm-6" ng-class="{'has-error': form.state.$dirty && form.state.$error.required}">
+                <label class="required">State</label>
+                <select class="form-control" name="state" ng-model="user.state" ng-options="o for o in states" required>
+                            <option value="" selected >Select a state</option>
+                </select>
+                <span ng-show="form.state.$dirty && form.state.$error.required" class="help-block">State is required</span>
+                </div>
+                <div class="col-sm-6" ng-class="{'has-error': form.city.$dirty && form.city.$error.required}">
+                <label class="required">City</label>
+                <select class="form-control" name="city" ng-model="user.city" ng-options="o for o in cities" required>
+                            <option value="" selected >Select a city</option>
+                </select>
+                <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block">City is required</span>
+                </div>
+                
+                </div>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.zip.$dirty && form.zip.$error.required}">
+                <label class="required">Zip Code</label>
+                <input type="text" name="zip" ng-model="user.zip" ng-pattern="numberPattern" class="form-control" required>
+               
+                <span ng-show="form.zip.$dirty && form.zip.$error.required" class="help-block">Zip Code is required</span>
+              </div>
+            </div>    
+          <!--   <div class="col-sm-6 form-group"> -->
+            <cnter>
+           <!--  <div clss="row"> -->
+            <div class="col-sm-offset-2 col-sm-4">
+          <button type="button" class="btn btn-submit" ng-click="resetForm()">CANCEL</button> 
+          </div>
+          <div class="col-sm-4">    
+          <button type="submit" ng-disabled="form.$invalid" class="btn btn-success"> SUBMIT <span class="glyphicon glyphicon-arrow-right"></span></button>
+          </div>
+          <!-- </div> -->
+          </cnter>
+          </div>
+          <!-- <span ng-show="form.$invalid" class="help-block">plase fill the required fields</span></center>       -->
+
+         <!--  </div> -->
+        </form> 
+        </div>
+  </div>
+  </div>
