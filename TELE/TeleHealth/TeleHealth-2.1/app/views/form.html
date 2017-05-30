@@ -1,0 +1,43 @@
+<div class="row">
+<!-- <div class="col-sm-8 col-sm-offset-2"> -->
+
+  <div id="form-container" style="background-color: white;">
+  
+      <div class="text-center">
+          
+          <!-- the links to our nested states using relative paths -->
+          <!-- add the active class if the state matches our ui-sref -->
+        <div id="status-buttons" class="text-center" >
+          <div class = "locationState">
+            <a ui-sref-active="active" ui-sref=".location"><h3><span>1</span></h3> Location</a><div class="line-margin"></div>
+            <a ui-sref-active="active" ui-sref=".reasons"><h3><span>2</span></h3> Request Type</a><div class="line-margin"></div>
+            <a ui-sref-active="active" ui-sref=".schedule"><h3><span>3</span></h3> Time slot</a><div class="line-margin"></div>
+            <a ui-sref-active="active" ui-sref=".confirmDetails"><h3><span>4</span></h3> Confirm</a>
+        </div> <!-- <hr/> -->
+      
+      </div>
+      </div>
+      
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      
+  
+  </div>
+
+<!-- </div> -->
+
+
+<div class="container" style="margin-top: 30px;background-color: white">
+<!-- <div class="row" style="background-color: grey;"> -->
+<!-- <div class="col-sm-8 col-sm-offset-2"> -->
+<!-- <div class="well" style="margin-top: 30px;background-color: white;"> -->
+      <form id="signup-form" ng-submit="processForm()">
+          <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+
+      </form>
+     <!--  </div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+</div>
+</div>

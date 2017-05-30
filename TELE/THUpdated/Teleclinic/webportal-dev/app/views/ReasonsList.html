@@ -1,0 +1,34 @@
+<div class="w3-container"><p>Make an appointment with licensed healthcare professional for a <br/> variety of services and screenings</p></div>
+
+<div class="form-group">
+	<center><label for="location" class="label-marg-45"><div class="required">Reason for Visit</div></label></center>
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4  col-xs-10">
+<div ng-controller="formController">
+<select class="form-control" ng-options="reason.reason for reason in reasons" ng-model="selected">        
+  <option value = "" label= "Please Select"></option>
+        <!-- <option ng-repeat="reason in reasonsList" value="{{reason.Id}}"
+                        ng-selected="{{reason.Selected == true }}">
+                {{reason.reason}}
+        </option> -->
+</select> <br></div>
+
+</div>
+<div class="col-sm-3"></div>
+</div>
+<div class="row">
+<div class="form-group">
+<div class="col-sm-2 col-sm-offset-3">
+   <a ui-sref="form.location" class="btn btn-block btn-default back-btn" >
+    BACK  
+    </a>
+</div>
+<div class="col-sm-4">
+   <a ui-sref="form.schedule" class="btn btn-block btn-default next-btn" >
+    NEXT 
+    </a>
+</div>
+</div>
+</div>
+</div>

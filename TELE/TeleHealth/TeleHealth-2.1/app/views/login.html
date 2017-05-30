@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class = "container">
+	<div class ="row">
+	
+		<div class = "col-xs-10 col-sm-6">
+			<h4> Sign in to your account</h4>
+			<h5> You'll be able to checkout faster</h5>
+			<div class = "form-group">
+				<input type="text" name="username" placeholder="Email Address">
+			</div>
+			<div class = "form-group">
+				<input type="password" name="password" placeholder="Password">
+			</div>
+			<button class = "buttonLogin"><a ui-sref="success">
+      		LOGIN  <span class="glyphicon glyphicon-arrow-right"></span>
+      		</a></button>
+      		<br> <br>
+      		<a href="#">Forgot Password?</a>
+			</div>
+
+			<div class="verticalLine">
+			</div>
+
+			<div class = "col-xs-10 col-sm-4">
+			<h4> Continue without signing in</h4>
+			<h5> You will have the option to register for an account after booking your appointment.</h5>
+			<br>
+			<h5> You can also <a href = "#">register for an account</a> now.</h5>
+			<br>
+			<button class = "buttonGuest"><a ui-sref="guestlogin">
+		      CONTINUE AS A GUEST  <span class="glyphicon glyphicon-arrow-right"></span>
+		      </a></button>
+		   
+  		 </div>
+	</div>	
+</div>
+</body>
+</html>

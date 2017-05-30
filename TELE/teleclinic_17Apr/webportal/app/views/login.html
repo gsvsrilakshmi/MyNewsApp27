@@ -1,0 +1,56 @@
+<div class = "container container-login text-center">
+	
+<div class = "col-xs-12 col-sm-6 marg-auto brd-right">
+<div class="col-sm-10">
+<form name="form">
+<div class = "location">
+      <center><label for="location">Sign in to your account</label></center>
+    </div>
+    <div class = "review">
+      <p>You'll be able to checkout faster</p>
+    </div>
+
+  <div class = "col-sm-8 errorDisplay"> {{ errorMsg }}</div>
+	<div class = "form-group container-login">
+    <span ng-show="form.username.$invalid" class="help-block errorDisplay" style = "text-align: left;">Invalid Email Address.</span>
+		<input type="email" class="form-control" name="username" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-model="username" placeholder="Email Address">
+	</div>
+
+	<div class = "form-group">
+		<input type="password" class="form-control" name="password" ng-model="password" placeholder="Password">
+	</div>
+  <br>
+	<a data-ng-class="{'disabled': !(username && password)}" ng-click="login()" class="btn btn-block next-btn login-btn">
+      LOGIN  
+      </a>
+      <br>
+      <br> <br>
+      <!-- <a href="" class="genaral-link">Forgot Password?</a> -->
+      </form>
+		</div>
+
+</div>
+		<div class = "col-xs-12 col-sm-6">
+        <div class="col-sm-10">
+        <div class = "location">
+      <center><label for="location">Continue without signing in</label></center>
+    </div>
+    <div class = "review-2">
+          <!-- You will have the option to register for an account after booking your appointment. -->
+          You have the option to continue as a guest to book your appointment.
+        
+			<br>
+            <br>
+            <br>
+			<!-- <span>You can also <a href="" class="genaral-link">register for an account</a> now.</span> -->
+			<br>
+            
+            </div>
+			<a ui-sref="guestlogin" ng-click="guestConfirmationInfo()" class="btn btn-block continue-btn marg-30">
+		      CONTINUE AS A GUEST 
+		      </a>
+		   
+  		 </div>
+	</div>	
+    </div>
+    <div class="ftr-gap"></div>

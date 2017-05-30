@@ -1,0 +1,117 @@
+<div class="container">
+    <h3 class="">Patient Information</h1>
+  <div class="col-lg-12 ">
+  <div class="row">
+        <form name="form">
+          <div class="col-sm-12">
+            <div class="row">
+            <div class="col-sm-6 form-group" ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+                <label class="required">First Name</label>
+                <input type="text" name="firstname" ng-model="user.firstname" placeholder="" class="form-control" required>
+                <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">First Name is required</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error':form.lastname.$dirty && form.lastname.$error.required }">
+                <label class="required">Last Name</label>
+                <input type="text" name ="lastname" ng-model="user.lastname" placeholder="" class="form-control" required>
+                  <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Last Name is Required</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label class="required">Date of Birth</label>
+                <div class="row">
+                <div class="col-sm-4" ng-class="{'has-error': form.month.$dirty && form.month.$error.required}">
+                 <select class="form-control" name="month" ng-model="user.month" ng-options="o for o in months" required>
+                 <option value="" selected>MM</option>
+                </select>
+                <span ng-show ="form.month.$dirty && form.month.$error.required" class="help-block"> Month is required</span>
+                </div>
+                <div class="col-sm-4" ng-class="{'has-error' : form.day.$dirty && form.day.$error.required}">
+                <select class="form-control" name="day" ng-model="user.day" ng-options="o for o in days" required>
+                <option value="" selected disabled>DD</option>
+                </select>
+                <span ng-show></span>
+                </div>
+                <div class="col-sm-4">
+                 <select class="form-control" ng-model="user.year" ng-options="o for o in years" required>
+                  <option value="" selected disabled>YYYY</option>
+                </select>
+                </div>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group">
+              <label class="required">Gender</label>
+              <div class="row">
+                
+              <div class="col-sm-4"><label class="radio-inline"><input type="radio" ng-model="user.gender" class="">Male</label></div>
+
+                <div class="col-sm-4"><label class="radio-inline"><input type="radio" ng-model="user.gender" class="">FeMale</label></div>
+                
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.email.$dirty && form.email.$error.required}">
+                <label class="required">Email Address</label>
+                <input type="text" name="email" ng-model="user.email" placeholder="" class="form-control" required>
+                <p align="justify">Will send you the details of your appointment request.
+                This email also includes cancellation instructions.</p>
+                <span ng-show=" form.email.$dirty && form.email.$error.required" class="help-block"> email is required</span>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.contactNumber.$dirty && form.contactNumber.$error.required }">
+                <label class="required">Contact Number</label>
+                <input type="text" name= "contactNumber" ng-model="user.contactNumber" placeholder="Best number to contact you" class="form-control" required>
+                <span ng-show="form.contactNumber.$dirty && form.contactNumber.$error.required" class="help-block" > contact number is required</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Contact Person (if different from person)</label>
+              <input type="text" ng-model="user.contactPerson" placeholder="Parent, Gaurdian or Caregiver" class="form-control">
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Alternative Contact Number (if Any)</label>
+                <input type="text" ng-model="user.contactNumberOther" placeholder="" class="form-control">
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.address1.$dirty && form.address1.$error.required}">
+                <label class="required">Address</label>
+                <input type="text" name = "address1" ng-model="user.address1" placeholder="" class="form-control" required>
+                <span ng-show="form.address1.$dirty && form.address1.$error.required" class="help-block">Address is required</span>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Address Line 2</label>
+                <input type="text" ng-model="user.address2" placeholder="" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                
+                <div class="row">
+                <div class="col-sm-6">
+                <label class="required">City</label>
+                <select class="form-control" ng-model="user.city" ng-options="o for o in cities" required>
+                            <option value="" selected disabled>Select a city</option>
+                </select>
+                </div>
+                <div class="col-sm-6">
+                <label class="required">State</label>
+                <select class="form-control" ng-model="user.state" ng-options="o for o in states" required>
+                            <option value="" selected disabled>Select a state</option>
+                </select>
+                </div>
+                </div>
+              </div>
+              <div class="col-sm-6 form-group" ng-class="{'has-error': form.zip.$dirty && form.zip.$error.required}">
+                <label class="required">Zip Code</label>
+                <input type="text" name="zip" ng-model="user.zip" placeholder="" class="form-control" required>
+                <span ng-show="form.zip.$dirty && form.zip.$error.required" class="help-block">Zip Code is required</span>
+              </div>
+            </div>         
+          <center><button type="button" class="btn btn-lg btn-success"> CONTINUE TO CONFORMATION </button></center>      
+          </div>
+        </form> 
+        </div>
+  </div>
+  </div>

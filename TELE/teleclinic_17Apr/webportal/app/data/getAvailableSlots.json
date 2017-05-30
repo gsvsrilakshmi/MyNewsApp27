@@ -1,0 +1,53 @@
+{
+    "week1": [
+        {
+            "date": "2017-03-12T18:00:42.412327",
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ]
+            
+        },
+        {
+            "date": "2017-03-13T18:00:42.412327",
+            "slots": [
+                {
+                    "available": "Yes",
+                    "start_Time": "2 PM",
+                    "end_Time": "5 PM",
+                    "slot_id": 3
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "11 AM",
+                    "end_Time": "2 PM",
+                    "slot_id": 2
+                },
+                {
+                    "available": "Yes",
+                    "start_Time": "8 AM",
+                    "end_Time": "11 AM",
+                    "slot_id": 1
+                }
+            ]
+            
+        }
+       
+    ]
+}

@@ -1,0 +1,29 @@
+<div class="w3-container">
+<center><p>Make an appointment with licensed healthcare professional for a </br>variety of services and screenings</p></center>
+</div>
+
+	 <div>
+    <center><label for="location" class="label-marg-45"><div class="required">Enter Your Location</div></label></center>
+
+    </div>
+   
+   <div class="row">
+    <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-4 container-fluid"> <!-- col-sm-offset-4 col-sm-4 -->
+    <center> <input type="text"  ng-model="searchTextSelected" class="form-control" placeholder="Enter Your Area Name........" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" style="font-size: 22px;"></center>
+    </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+    <br>
+    </div>
+<div class="row">
+<div class="form-group">
+<div class="col-sm-offset-4 col-sm-4">
+     <button class ="btn btn-block btn-default next-btn"> <a ui-sref="form.reasons"> <!-- class="btn btn-block btn-default" -->
+    NEXT 
+    </a></button>
+</div>
+</div>
+</div>

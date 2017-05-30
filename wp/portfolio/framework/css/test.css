@@ -1,0 +1,38 @@
+* {
+   /*outline: 1px solid red !important;*/
+   font-family: "Lato", sans-serif;
+}
+
+.row {
+	width:100%;
+}
+
+.col-1 {
+	width:8.33%;
+}
+
+.col-2 {
+	width: 16.66%;
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+.col-5 {
+	width: 41.66%;
+}
+
+.imageResize {
+	height: 350px;
+	width: 100%;
+}
+
+.set_width_height {
+	width: 80%;
+	height: 80%;
+}
